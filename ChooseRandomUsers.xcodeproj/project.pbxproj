@@ -16,6 +16,7 @@
 		A934EC592C495A1300DA314C /* CreateUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC582C495A1300DA314C /* CreateUserTableViewController.swift */; };
 		A934EC5B2C495A2B00DA314C /* RandomUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC5A2C495A2B00DA314C /* RandomUsersTableViewController.swift */; };
 		A934EC5E2C495ADD00DA314C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC5D2C495ADD00DA314C /* User.swift */; };
+		A934EC612C496CC300DA314C /* RandomUsersCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC602C496CC300DA314C /* RandomUsersCountTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A934EC582C495A1300DA314C /* CreateUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserTableViewController.swift; sourceTree = "<group>"; };
 		A934EC5A2C495A2B00DA314C /* RandomUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUsersTableViewController.swift; sourceTree = "<group>"; };
 		A934EC5D2C495ADD00DA314C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A934EC602C496CC300DA314C /* RandomUsersCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUsersCountTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				A934EC582C495A1300DA314C /* CreateUserTableViewController.swift */,
 				A934EC5A2C495A2B00DA314C /* RandomUsersTableViewController.swift */,
+				A934EC602C496CC300DA314C /* RandomUsersCountTableViewCell.swift */,
 				A934EC562C495A0300DA314C /* UsersTableViewController.swift */,
 			);
 			path = "View Controllers";
@@ -168,6 +171,7 @@
 				A934EC5E2C495ADD00DA314C /* User.swift in Sources */,
 				A934EC5B2C495A2B00DA314C /* RandomUsersTableViewController.swift in Sources */,
 				A934EC452C4955B800DA314C /* SceneDelegate.swift in Sources */,
+				A934EC612C496CC300DA314C /* RandomUsersCountTableViewCell.swift in Sources */,
 				A934EC572C495A0300DA314C /* UsersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

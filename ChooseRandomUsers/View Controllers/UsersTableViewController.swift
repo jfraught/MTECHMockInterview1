@@ -24,20 +24,28 @@ class UsersTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        users.count
+        users.count + 2
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-        
-        let user = users[indexPath.row]
-        
-        var content = cell.defaultContentConfiguration()
-        content.text = user.name
-        cell.contentConfiguration = content
-        
-        return cell
+        if indexPath.row < users.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
+            
+            let user = users[indexPath.row]
+            
+            var content = cell.defaultContentConfiguration()
+            content.text = user.name
+            cell.contentConfiguration = content
+            
+            return cell
+        } else if indexPath.row == users.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "randomUserCountCell", for: indexPath) as! RandomUsersCountTableViewCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "getRandomUserCell", for: indexPath)
+            return cell
+        }
     }
     
     // MARK: - Segues
@@ -54,5 +62,16 @@ class UsersTableViewController: UITableViewController {
         }
         
         User.saveUsers(users)
+    }
+    
+    @IBSegueAction func getRandomUsersSegue(_ coder: NSCoder, sender: Any?) -> RandomUsersTableViewController? {
+        
+        let randomNumber = Int.random(in: 0..<users.count)
+        
+        let randomController = RandomUsersTableViewController(coder: coder)
+        
+        randomController?.user = users[randomNumber]
+        
+        return randomController
     }
 }
