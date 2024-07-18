@@ -27,7 +27,6 @@ class UsersTableViewController: UITableViewController {
         users.count + 2
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row < users.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)

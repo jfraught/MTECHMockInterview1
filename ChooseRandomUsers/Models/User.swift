@@ -12,13 +12,9 @@ struct User {
     var name: String
 }
 
-extension User: Codable, Equatable {
+extension User: Codable {
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let archiveURL = documentsDirectory.appendingPathComponent("users").appendingPathExtension("plist")
-    
-    static func ==(lhs: User, rhs: User) -> Bool {
-        lhs.id == rhs.id
-    }
     
     static func loadUsers() -> [User]? {
         guard let codedUsers = try? Data(contentsOf: archiveURL) else { return nil }
