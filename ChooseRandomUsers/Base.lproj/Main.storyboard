@@ -98,31 +98,38 @@
             </objects>
             <point key="canvasLocation" x="140" y="-131"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Add Users-->
         <scene sceneID="YaH-uA-I3e">
             <objects>
                 <tableViewController id="NgU-km-BLW" customClass="CreateUserTableViewController" customModule="ChooseRandomUsers" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="50b-C5-lPo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="50b-C5-lPo">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="User Name" id="E4B-le-yfY">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="md5-VA-GAc">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="353" height="34.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="md5-VA-GAc" id="GzE-sX-vGr">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="34.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOx-SU-WNh">
-                                                    <rect key="frame" x="20" y="4" width="353" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOx-SU-WNh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="NgU-km-BLW" eventType="editingChanged" id="BYy-O7-M2m"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="OOx-SU-WNh" secondAttribute="bottom" id="E4Q-2R-8ds"/>
+                                                <constraint firstAttribute="trailing" secondItem="OOx-SU-WNh" secondAttribute="trailing" id="jh1-HR-IDv"/>
+                                                <constraint firstItem="OOx-SU-WNh" firstAttribute="leading" secondItem="GzE-sX-vGr" secondAttribute="leading" id="t4o-8u-QyV"/>
+                                                <constraint firstItem="OOx-SU-WNh" firstAttribute="top" secondItem="GzE-sX-vGr" secondAttribute="top" id="zhR-Ix-NCL"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -133,12 +140,25 @@
                             <outlet property="delegate" destination="NgU-km-BLW" id="67R-vK-3vP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Ryy-gu-muV">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="55p-Vf-mfT"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="EZk-bD-hzu"/>
+                    <navigationItem key="navigationItem" title="Add Users" id="Ryy-gu-muV" userLabel="Add Users">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="55p-Vf-mfT">
+                            <connections>
+                                <segue destination="FHE-Iz-tKU" kind="unwind" identifier="" unwindAction="unwindToUserListWithSegue:" id="m5n-90-1yd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="EZk-bD-hzu">
+                            <connections>
+                                <segue destination="FHE-Iz-tKU" kind="unwind" identifier="saveUnwind" unwindAction="unwindToUserListWithSegue:" id="Xwn-aH-4ix"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="OOx-SU-WNh" id="GmW-oX-jIL"/>
+                        <outlet property="saveButton" destination="EZk-bD-hzu" id="1F7-O1-ejw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPw-hk-oPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="FHE-Iz-tKU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1942.7480916030534" y="-132.3943661971831"/>
         </scene>
