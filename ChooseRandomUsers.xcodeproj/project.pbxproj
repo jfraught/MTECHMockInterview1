@@ -15,6 +15,7 @@
 		A934EC572C495A0300DA314C /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC562C495A0300DA314C /* UsersTableViewController.swift */; };
 		A934EC592C495A1300DA314C /* CreateUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC582C495A1300DA314C /* CreateUserTableViewController.swift */; };
 		A934EC5B2C495A2B00DA314C /* RandomUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC5A2C495A2B00DA314C /* RandomUsersTableViewController.swift */; };
+		A934EC5E2C495ADD00DA314C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC5D2C495ADD00DA314C /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A934EC562C495A0300DA314C /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		A934EC582C495A1300DA314C /* CreateUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserTableViewController.swift; sourceTree = "<group>"; };
 		A934EC5A2C495A2B00DA314C /* RandomUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUsersTableViewController.swift; sourceTree = "<group>"; };
+		A934EC5D2C495ADD00DA314C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				A934EC422C4955B800DA314C /* AppDelegate.swift */,
 				A934EC442C4955B800DA314C /* SceneDelegate.swift */,
 				A934EC482C4955B800DA314C /* Main.storyboard */,
+				A934EC5F2C495AE300DA314C /* Models */,
 				A934EC5C2C495A3400DA314C /* View Controllers */,
 				A934EC4B2C4955B900DA314C /* Assets.xcassets */,
 				A934EC4D2C4955B900DA314C /* LaunchScreen.storyboard */,
@@ -74,11 +77,19 @@
 		A934EC5C2C495A3400DA314C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A934EC5A2C495A2B00DA314C /* RandomUsersTableViewController.swift */,
 				A934EC582C495A1300DA314C /* CreateUserTableViewController.swift */,
+				A934EC5A2C495A2B00DA314C /* RandomUsersTableViewController.swift */,
 				A934EC562C495A0300DA314C /* UsersTableViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A934EC5F2C495AE300DA314C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A934EC5D2C495ADD00DA314C /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 			files = (
 				A934EC592C495A1300DA314C /* CreateUserTableViewController.swift in Sources */,
 				A934EC432C4955B800DA314C /* AppDelegate.swift in Sources */,
+				A934EC5E2C495ADD00DA314C /* User.swift in Sources */,
 				A934EC5B2C495A2B00DA314C /* RandomUsersTableViewController.swift in Sources */,
 				A934EC452C4955B800DA314C /* SceneDelegate.swift in Sources */,
 				A934EC572C495A0300DA314C /* UsersTableViewController.swift in Sources */,
